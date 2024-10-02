@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/mnt/d/ds/work/workspace/git/vllm/build/temp.linux-x86_64-cpython-310",
+  "command": "/usr/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/mnt/d/ds/work/workspace/git/vllm/csrc -isystem /root/miniconda3/envs/vllm/include/python3.10 -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mavx2 -D_GLIBCXX_USE_CXX11_ABI=0 -o CMakeFiles/_C.dir/csrc/cpu/activation.cpp.o -c /mnt/d/ds/work/workspace/git/vllm/csrc/cpu/activation.cpp",
+  "file": "/mnt/d/ds/work/workspace/git/vllm/csrc/cpu/activation.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/activation.cpp.o"
+},
+{
+  "directory": "/mnt/d/ds/work/workspace/git/vllm/build/temp.linux-x86_64-cpython-310",
+  "command": "/usr/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/mnt/d/ds/work/workspace/git/vllm/csrc -isystem /root/miniconda3/envs/vllm/include/python3.10 -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mavx2 -D_GLIBCXX_USE_CXX11_ABI=0 -o CMakeFiles/_C.dir/csrc/cpu/attention.cpp.o -c /mnt/d/ds/work/workspace/git/vllm/csrc/cpu/attention.cpp",
+  "file": "/mnt/d/ds/work/workspace/git/vllm/csrc/cpu/attention.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/attention.cpp.o"
+},
+{
+  "directory": "/mnt/d/ds/work/workspace/git/vllm/build/temp.linux-x86_64-cpython-310",
+  "command": "/usr/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/mnt/d/ds/work/workspace/git/vllm/csrc -isystem /root/miniconda3/envs/vllm/include/python3.10 -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mavx2 -D_GLIBCXX_USE_CXX11_ABI=0 -o CMakeFiles/_C.dir/csrc/cpu/cache.cpp.o -c /mnt/d/ds/work/workspace/git/vllm/csrc/cpu/cache.cpp",
+  "file": "/mnt/d/ds/work/workspace/git/vllm/csrc/cpu/cache.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/cache.cpp.o"
+},
+{
+  "directory": "/mnt/d/ds/work/workspace/git/vllm/build/temp.linux-x86_64-cpython-310",
+  "command": "/usr/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/mnt/d/ds/work/workspace/git/vllm/csrc -isystem /root/miniconda3/envs/vllm/include/python3.10 -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mavx2 -D_GLIBCXX_USE_CXX11_ABI=0 -o CMakeFiles/_C.dir/csrc/cpu/utils.cpp.o -c /mnt/d/ds/work/workspace/git/vllm/csrc/cpu/utils.cpp",
+  "file": "/mnt/d/ds/work/workspace/git/vllm/csrc/cpu/utils.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/utils.cpp.o"
+},
+{
+  "directory": "/mnt/d/ds/work/workspace/git/vllm/build/temp.linux-x86_64-cpython-310",
+  "command": "/usr/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/mnt/d/ds/work/workspace/git/vllm/csrc -isystem /root/miniconda3/envs/vllm/include/python3.10 -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mavx2 -D_GLIBCXX_USE_CXX11_ABI=0 -o CMakeFiles/_C.dir/csrc/cpu/layernorm.cpp.o -c /mnt/d/ds/work/workspace/git/vllm/csrc/cpu/layernorm.cpp",
+  "file": "/mnt/d/ds/work/workspace/git/vllm/csrc/cpu/layernorm.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/layernorm.cpp.o"
+},
+{
+  "directory": "/mnt/d/ds/work/workspace/git/vllm/build/temp.linux-x86_64-cpython-310",
+  "command": "/usr/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/mnt/d/ds/work/workspace/git/vllm/csrc -isystem /root/miniconda3/envs/vllm/include/python3.10 -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mavx2 -D_GLIBCXX_USE_CXX11_ABI=0 -o CMakeFiles/_C.dir/csrc/cpu/pos_encoding.cpp.o -c /mnt/d/ds/work/workspace/git/vllm/csrc/cpu/pos_encoding.cpp",
+  "file": "/mnt/d/ds/work/workspace/git/vllm/csrc/cpu/pos_encoding.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/pos_encoding.cpp.o"
+},
+{
+  "directory": "/mnt/d/ds/work/workspace/git/vllm/build/temp.linux-x86_64-cpython-310",
+  "command": "/usr/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/mnt/d/ds/work/workspace/git/vllm/csrc -isystem /root/miniconda3/envs/vllm/include/python3.10 -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include -isystem /root/miniconda3/envs/vllm/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mavx2 -D_GLIBCXX_USE_CXX11_ABI=0 -o CMakeFiles/_C.dir/csrc/cpu/torch_bindings.cpp.o -c /mnt/d/ds/work/workspace/git/vllm/csrc/cpu/torch_bindings.cpp",
+  "file": "/mnt/d/ds/work/workspace/git/vllm/csrc/cpu/torch_bindings.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/torch_bindings.cpp.o"
+}
+]

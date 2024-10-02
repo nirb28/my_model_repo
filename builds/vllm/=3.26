@@ -1,0 +1,8 @@
+Requirement already satisfied: cmake in /root/miniconda3/envs/vllm/lib/python3.10/site-packages (3.30.4)
+Requirement already satisfied: wheel in /root/miniconda3/envs/vllm/lib/python3.10/site-packages (0.44.0)
+Requirement already satisfied: packaging in /root/miniconda3/envs/vllm/lib/python3.10/site-packages (24.1)
+Requirement already satisfied: ninja in /root/miniconda3/envs/vllm/lib/python3.10/site-packages (1.11.1.1)
+Requirement already satisfied: setuptools-scm>=8 in /root/miniconda3/envs/vllm/lib/python3.10/site-packages (8.1.0)
+Requirement already satisfied: numpy in /root/miniconda3/envs/vllm/lib/python3.10/site-packages (2.1.1)
+Requirement already satisfied: setuptools in /root/miniconda3/envs/vllm/lib/python3.10/site-packages (from setuptools-scm>=8) (75.1.0)
+Requirement already satisfied: tomli>=1 in /root/miniconda3/envs/vllm/lib/python3.10/site-packages (from setuptools-scm>=8) (2.0.1)
