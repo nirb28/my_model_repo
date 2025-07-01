@@ -29,7 +29,8 @@ python github_downloader.py --repo username/repository
 python github_downloader.py --repo https://github.com/username/repository --branch develop --dest ./downloads
 
 # Keep the zip file after extraction
-python utils/github_downloader.py --repo username/repository --keep-zip --dest 
+python utils/github_downloader.py --repo https://github.com/nirb28/my_model_repo --keep-zip --dest .
+
 ```
 
 ### Full Path Example
