@@ -4,6 +4,7 @@ GitHub Repository Downloader
 
 This script downloads a GitHub repository as a zip file and extracts it to a destination location.
 Parameters are defined via command line arguments.
+Supports proxy configuration for network connections.
 """
 
 import argparse
@@ -14,6 +15,7 @@ import sys
 import zipfile
 from pathlib import Path
 from urllib.parse import urlparse
+import urllib3
 
 
 def parse_arguments():
@@ -46,6 +48,30 @@ def parse_arguments():
         help="Keep the downloaded zip file after extraction"
     )
     
+    # Proxy configuration options
+    proxy_group = parser.add_argument_group("Proxy Configuration")
+    
+    proxy_group.add_argument(
+        "--proxy",
+        help="HTTP/HTTPS proxy URL (e.g., 'http://proxy.example.com:8080')"
+    )
+    
+    proxy_group.add_argument(
+        "--proxy-user",
+        help="Username for proxy authentication"
+    )
+    
+    proxy_group.add_argument(
+        "--proxy-password",
+        help="Password for proxy authentication"
+    )
+    
+    proxy_group.add_argument(
+        "--no-proxy-verify",
+        action="store_true",
+        help="Disable SSL certificate verification when using proxy"
+    )
+    
     return parser.parse_args()
 
 
@@ -65,7 +91,7 @@ def normalize_repo_url(repo_url):
     return repo_url
 
 
-def download_github_repo(repo_url, branch, dest_dir, keep_zip=False):
+def download_github_repo(repo_url, branch, dest_dir, keep_zip=False, proxy=None, proxy_auth=None, verify_ssl=True):
     """
     Download a GitHub repository as a zip file and extract it.
     
@@ -74,6 +100,9 @@ def download_github_repo(repo_url, branch, dest_dir, keep_zip=False):
         branch: Branch, tag, or commit reference
         dest_dir: Destination directory to extract files to
         keep_zip: Whether to keep the zip file after extraction
+        proxy: Proxy URL (optional)
+        proxy_auth: Tuple of (username, password) for proxy authentication (optional)
+        verify_ssl: Whether to verify SSL certificates when using proxy (default: True)
     """
     # Normalize the repository URL
     repo_url = normalize_repo_url(repo_url)
@@ -101,8 +130,33 @@ def download_github_repo(repo_url, branch, dest_dir, keep_zip=False):
     print(f"Downloading {owner}/{repo} ({branch}) from GitHub...")
     
     try:
+        # Configure proxies if provided
+        proxies = {}
+        if proxy:
+            proxies = {
+                'http': proxy,
+                'https': proxy
+            }
+            print(f"Using proxy: {proxy}")
+        
+        # Configure session
+        session = requests.Session()
+        
+        # Set proxy authentication if provided
+        if proxy and proxy_auth:
+            session.proxies = proxies
+            username, password = proxy_auth
+            session.auth = requests.auth.HTTPProxyAuth(username, password)
+            print(f"Using proxy authentication for user: {username}")
+        
+        # Handle SSL verification
+        if not verify_ssl:
+            print("Warning: SSL certificate verification disabled")
+            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+            session.verify = False
+        
         # Download the zip file
-        response = requests.get(zip_url, stream=True)
+        response = session.get(zip_url, stream=True, proxies=proxies)
         response.raise_for_status()
         
         # Save the zip file
@@ -142,12 +196,20 @@ def download_github_repo(repo_url, branch, dest_dir, keep_zip=False):
 def main():
     args = parse_arguments()
     
+    # Configure proxy authentication if credentials are provided
+    proxy_auth = None
+    if args.proxy and args.proxy_user and args.proxy_password:
+        proxy_auth = (args.proxy_user, args.proxy_password)
+    
     try:
         success = download_github_repo(
             args.repo,
             args.branch,
             args.dest,
-            args.keep_zip
+            args.keep_zip,
+            args.proxy,
+            proxy_auth,
+            not args.no_proxy_verify
         )
         
         if success:

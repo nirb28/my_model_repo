@@ -4,7 +4,7 @@ This directory contains various utility scripts for the my_model_repo project.
 
 ## GitHub Repository Downloader
 
-The `github_downloader.py` script allows you to download any GitHub repository as a zip file and extract it to a destination location.
+The `github_downloader.py` script allows you to download any GitHub repository as a zip file and extract it to a destination location. It supports proxy configuration for network connections.
 
 ### Usage
 
@@ -19,6 +19,13 @@ python github_downloader.py --repo owner/repo --branch branch_name --dest destin
 - `--dest` or `-d`: Destination directory to extract files to (default: current directory)
 - `--keep-zip` or `-k`: Keep the downloaded zip file after extraction
 
+#### Proxy Options
+
+- `--proxy`: HTTP/HTTPS proxy URL (e.g., 'http://proxy.example.com:8080')
+- `--proxy-user`: Username for proxy authentication
+- `--proxy-password`: Password for proxy authentication
+- `--no-proxy-verify`: Disable SSL certificate verification when using proxy
+
 ### Examples
 
 ```bash
@@ -30,6 +37,12 @@ python github_downloader.py --repo https://github.com/username/repository --bran
 
 # Keep the zip file after extraction
 python utils/github_downloader.py --repo https://github.com/nirb28/my_model_repo --keep-zip --dest .
+
+# Using a proxy server
+python github_downloader.py --repo username/repository --proxy http://proxy.example.com:8080
+
+# Using a proxy server with authentication
+python github_downloader.py --repo username/repository --proxy http://proxy.example.com:8080 --proxy-user myuser --proxy-password mypass
 
 ```
 
